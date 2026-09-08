@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dark Mode</title>
+    <link rel="stylesheet" href="CSS/page01.css">
+</head>
+<body>
+
+    <main class="form-wrapper">
+        <!-- BARRA SUPERIOR CON ICONOS -->
+        <div class="top-bar">
+            <!-- Icono 1 (Sol) -->
+            
+        </div>
+
+        <!-- FORMULARIO -->
+        <form>
+            <input type="text" id="nombre" class="material-input" placeholder="Name">
+            <input type="email" id="email" class="material-input" placeholder="E-mail">
+            <input type="password" id="password" class="material-input" placeholder="Password">
+            
+            <!-- Campo de imagen del mismo ancho -->
+            <div class="material-input file-input-wrapper">
+                <span class="file-placeholder">Image</span>
+                <input type="file" id="imagen" accept="image/*">
+            </div>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="terminos">
+                <label for="terminos">Do you agree?</label>
+                <input type="checkbox" id="terminos2">
+                <label for="terminos2">Do you agree?</label>
+
+            </div>
+
+            <div class="buttons-wrapper">
+                <button type="submit">SUBMIT</button>
+                <button type="reset">CLEAR</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>
