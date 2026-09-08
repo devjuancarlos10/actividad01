@@ -31,3 +31,71 @@ body {
     text-align: center;
     margin-bottom: 20px;
 }
+
+
+/* Requisito b: Efecto Hover con 10% más de opacidad */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+img:hover {
+    opacity: 1.0; /* Aumenta un 10% la opacidad al pasar el cursor */
+}
+
+/* Pestañas (Tabs) */
+.tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.tab.activo {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Grilla de Productos con Flexbox */
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-producto {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tag {
+    background-color: #5b2cac;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
