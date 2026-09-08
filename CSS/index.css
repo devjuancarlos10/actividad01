@@ -39,8 +39,7 @@ body {
     background-color: transparent;
     width: 170px;
     height: 250px;
-    perspective: 1000px; /* Profundidad 3D */
-    cursor: pointer;
+    perspective: 1000px;
 }
 
 .card-inner {
@@ -52,7 +51,7 @@ body {
     transform-style: preserve-3d;
 }
 
-/* Animación: giro de 180° sobre eje horizontal y vertical al pasar el mouse */
+/* Rotación 3D solicitada de 180° en horizontal y vertical */
 .card-wrapper:hover .card-inner {
     transform: rotateX(180deg) rotateY(180deg);
 }
@@ -72,7 +71,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Cara Frontal (Azul en reposo) */
+/* Cara Frontal (Azul) */
 .card-front {
     background-color: #3182ce;
     color: #ffffff;
@@ -82,7 +81,12 @@ body {
     transform: rotateX(0deg) rotateY(0deg);
 }
 
-/* Cara Trasera (Verde: invertida en reposo para quedar al derecho tras el giro) */
+/* Al hacer hover, la cara frontal pierde la recepción de clicks */
+.card-wrapper:hover .card-front {
+    pointer-events: none;
+}
+
+/* Cara Trasera (Verde con el link activo) */
 .card-back {
     background-color: #27ae60;
     color: #ffffff;
@@ -90,6 +94,13 @@ body {
     z-index: 1;
 }
 
+/* Al hacer hover, la cara trasera pasa al frente de interacción */
+.card-wrapper:hover .card-back {
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* El enlace debe cubrir todo el tamaño de la tarjeta para hacer click en cualquier parte */
 .card-link {
     color: #ffffff;
     text-decoration: none;
@@ -100,6 +111,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    cursor: pointer;
 }
 /* ================================
    2. FORMULARIO DE AUTENTICACIÓN
