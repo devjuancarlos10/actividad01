@@ -3,28 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Page 02 - Práctica</title>
-    <style>
-        /* reset básico y estilos de la pantalla */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background-color: #1e1e1e;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 0;
-            gap: 30px;
-        }
-    </style>
+    <!-- Vinculamos el archivo CSS externo -->
+    <link rel="stylesheet" href="./CSS/page02.css">
 </head>
 <body>
 
-    <!-- aquí irán los componentes de la práctica -->
+    <div class="container">
+        <div class="tabs">
+            <div class="tab">
+                <div class="tab-number">1</div>
+                Review Order
+            </div>
+            <div class="tab active">
+                <div class="tab-number">2</div>
+                Select Shipping
+            </div>
+            <div class="tab">
+                <div class="tab-number">3</div>
+                Submit
+            </div>
+        </div>
 
+        <div class="section-title">Shipping</div>
+        <div class="sub-title">Delivery Method</div>
+
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="shipping" checked> Standard Shipping
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="shipping"> Priority Shipping
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="shipping"> Express Shipping
+            </label>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn">PREVIOUS</button>
+            <button class="btn btn-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- card rgb -->
+    <div class="rgb-card">
+        <div class="color-box" id="colorDisplay"></div>
+        
+        <div class="rgb-controls">
+            <div class="control-row">
+                <label>R</label>
+                <input type="range" id="rangeR" min="0" max="255" value="80">
+                <input type="number" id="numR" min="0" max="255" value="80">
+            </div>
+            <div class="control-row">
+                <label>G</label>
+                <input type="range" id="rangeG" min="0" max="255" value="165">
+                <input type="number" id="numG" min="0" max="255" value="165">
+            </div>
+            <div class="control-row">
+                <label>B</label>
+                <input type="range" id="rangeB" min="0" max="255" value="92">
+                <input type="number" id="numB" min="0" max="255" value="92">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // capturo los elementos del DOM
+        const rangeR = document.getElementById('rangeR');
+        const numR = document.getElementById('numR');
+        const rangeG = document.getElementById('rangeG');
+        const numG = document.getElementById('numG');
+        const rangeB = document.getElementById('rangeB');
+        const numB = document.getElementById('numB');
+        const colorDisplay = document.getElementById('colorDisplay');
+
+        // función para cambiar el color del rectángulo
+        function changeColor() {
+            const r = rangeR.value;
+            const g = rangeG.value;
+            const b = rangeB.value;
+            colorDisplay.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        // sincronizar los inputs con los sliders
+        rangeR.addEventListener('input', () => { numR.value = rangeR.value; changeColor(); });
+        numR.addEventListener('input', () => { rangeR.value = numR.value; changeColor(); });
+
+        rangeG.addEventListener('input', () => { numG.value = rangeG.value; changeColor(); });
+        numG.addEventListener('input', () => { rangeG.value = numG.value; changeColor(); });
+
+        rangeB.addEventListener('input', () => { numB.value = rangeB.value; changeColor(); });
+        numB.addEventListener('input', () => { rangeB.value = numB.value; changeColor(); });
+    </script>
 </body>
 </html>
