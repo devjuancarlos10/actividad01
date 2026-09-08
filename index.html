@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="./CSS/index.css">
 </head>
 <body>
-    
+
+    <main class="main-container">
+        
+        <!-- Sección de Cards Animados en 3D -->
+        <section class="cards-section">
+            
+            <!-- Card 1 -->
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>page 1</h3>
+                    </div>
+                    <div class="card-back">
+                        <a href="page01.html" class="card-link">Ir a Page1</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>page 2</h3>
+                    </div>
+                    <div class="card-back">
+                        <a href="page02.html" class="card-link">Ir a Page2</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-wrapper">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>page 3</h3>
+                    </div>
+                    <div class="card-back">
+                        <a href="page03.html" class="card-link">Ir a Page3</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Sección Formulario de Autenticación -->
+        <section class="auth-section">
+            <div class="login-box">
+                <form class="login-form">
+                    
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group error-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <span class="error-text">Field is required</span>
+                    </div>
+
+                    <button type="submit" class="btn-signin">SIGN IN</button>
+                    
+                </form>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
